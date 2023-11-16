@@ -7,7 +7,8 @@
     box-sizing: border-box;
 }
 
-ul ol{
+.nav-bar li{
+    display: inline-block;
     list-style: none;
 }
 
@@ -22,7 +23,11 @@ ul ol{
     GENERAL
 */
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--black);
 }
 
 .header-container{
@@ -34,6 +39,9 @@ html {
     top: 0;
     text-align: right;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 
@@ -53,6 +61,35 @@ html {
     display: flex;
 }
 
+.upgrade-button{
+    background-color: var(--black);
+    color: white;
+    padding: 10px 35px;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: .8em;
+}
+
+ul li .add{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    line-height: 15px;
+    background-color: gray;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.aside-playlist ul li:first-child{
+    display:flex;
+}
+
 /* ASIDE BAR */
 
 aside{
@@ -61,8 +98,9 @@ aside{
     height: calc(100vh - 80px);
     color: grey;
     z-index: 2;
-    position: sticky;
+    position: fixed;
     left: 0;
+    padding: 0 15px;
 
 }
 
@@ -70,28 +108,105 @@ aside{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* position: relative; */
 }
+
+/* .big-aside-bottom{
+    position: absolute;
+    bottom: 0;
+} */
 .small-aside-bar{
     display: none;
 }
 
 .logo-container{
     height: var(--header-width);
+    display: flex;
+    align-items: center;
 }
+
+.logo-container img{
+    width: 60%;
+}
+
+/* .add-playlist{
+    display: flex;
+    align-items: center;
+} */
+
+.big-aside-bar i{
+    margin-right: 5px;
+}
+
+.big-aside-bar p{
+    font-weight: bold;
+    font-size: .85em;   
+}
+
+.big-aside-bar h5{
+    font-weight: bold;
+    color: white;
+}
+
+.aside-nav-bar > *,
+.aside-playlist > h5,
+.aside-playlist a,
+.aside-playlist li,
+.big-aside-bottom > *:not(.add){
+    padding: 8px 0;
+}
+
+.big-aside-bottom p{
+    border-bottom: 1px solid #7D7F84;
+}
+
+.aside-playlist a{
+    text-decoration: none;
+    color: #808080;
+    font-size: .8em;
+    font-weight: bold;
+}
+ .aside-playlist li{
+    list-style: none;
+ }
 
 /* MAIN */
 
 .main-container{
     width: calc(100% - 200px);
+    margin-left: 200px;
     background-color: var(--main-color);
     margin-top: 50px;
+    margin-bottom: 80px;
     overflow: auto;
+    padding:0 15px;
 }
 
-.nav-bar{
+/* .nav-bar{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     color: lightgray;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #7D7F84;
+    padding: 5px;
+} */
+
+.nav-bar{
+    text-align: center;
+}
+.nav-bar a{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: lightgray;
+    font-size: .8em;
+    font-weight: bold;
+    color: #7D7F84;
+    padding: 10px;
+    text-decoration: none;
+
 }
 
 nav > *{
@@ -107,7 +222,57 @@ nav > *{
     width: calc((100% / 6) - 10px);
     min-height: 150px;
     margin: 0 5px;
-    border: 2px dashed white; /* debug border */
+}
+
+#recently h1{
+    color: white;
+    padding: 30px 0;
+}
+
+.songs img{
+    width: 100%;
+}
+
+.songs-description{
+    text-align: center;
+    
+}
+
+
+
+.songs-description p{
+    color: #7D7F84;
+    font-weight: bold;
+    font-size: .8em;
+    
+}
+
+#generated h1,
+#popular h1{
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 8px;
+}
+
+.for-you-img img{
+    width: 100%;
+}
+
+.for-you h2,
+.songs-description h2{
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#generated > p,
+#popular > p{
+    color: #7D7F84;
+    font-weight: bold;
+    padding-bottom: 25px;
+    font-size: .8em;
 }
 
 /* FOOTER */
@@ -124,13 +289,18 @@ nav > *{
     width: 60%;
 }
 
-/* degub */
-
-aside > *,
-.footer-container > *,
-.big-aside-top > *{
-    border: 2px dashed white;
+.footer-left{
+    display:flex;
+    align-items: center;
 }
+
+.footer-center{
+    text-align: center;
+}
+
+
+
+
 
 
 
@@ -166,6 +336,12 @@ aside > *,
         width: 50px;
     }
 
+    .main-container{
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        
+    }
+
     .big-aside-bar{
         display:none;
     }
@@ -180,5 +356,16 @@ aside > *,
         justify-content: space-between;
         align-items: center;
     }
+
+    .small-aside-top img{
+        width: 100%;
+    }
+
+    .small-aside-top > *,
+    .small-aside-bottom > *{
+        padding: 10px 0;
+    }
+
+    
 
 }

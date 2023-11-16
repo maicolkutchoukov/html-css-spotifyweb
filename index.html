@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template HTML CSS</title>
+        <title>Spotify</title>
 
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -16,7 +18,7 @@
         <!-- Inizio Header Principale -->
         <header>
             <div class="header-container">
-                HEADER
+                <a href="#" class="upgrade-button">EFFETTUA L'UPGRADE</a>
             </div>
         </header>
         <!-- Fine Header Principale -->
@@ -28,137 +30,203 @@
                 <aside class="big-aside-bar">
                     <div class="big-aside-top">
                         <div class="logo-container">
-                            immagine logo
+                                <img src="img/logo.svg" alt="">
                         </div>
                         
                         <div class="aside-nav-bar">
-                            <p>Home</p>
-                            <p>Cerca</p>
-                            <p>La tua libreria</p>
+                            <p>
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Cerca
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-music"></i>
+                                La tua libreria
+                            </p>
                         </div>
                         
                         <div class="aside-playlist">
-                            <h3>Playlist</h3>
-                            <p>Crea Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
-                            <p>Nome Playlist</p>
+                            <h5>PLAYLIST</h5>
+                            <ul>
+                                <li>
+                                    <a href="" class="add">+</a>
+                                    <a href="#">Crea Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li><li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nome Playlist</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     
                     <div class="big-aside-bottom">
-                        <p><small>Installa app</small></p>
-                        <hr>
-                        <h3>Maicol Nick</h3>
+                        <p>
+                            <small>
+                            <i class="fa-solid fa-download"></i>
+                            Installa app
+                            </small>
+                        </p>
+                        
+                        <h5>
+                            <i class="fa-solid fa-circle-user"></i>
+                            Maicol Nick
+                        </h5>
                     </div>   
                 </aside>
 
                 <aside class="small-aside-bar">
                     <div class="small-aside-top">
-                        <p>1</p>
-                        <p>2</p>
-                        <p>3</p>
-                        <p>4</p>
+                        <img src="img/logo-small.svg" alt="">
+                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-music"></i>
+
+
                     </div>
                     <div class="small-aside-bottom">
-                        <p>1</p>
-                        <p>2</p>
+                        <i class="fa-solid fa-download"></i>
+                        <i class="fa-solid fa-circle-user"></i>
+
                     </div>
                 </aside>
                 <div class="main-container">
                     <nav class="nav-bar">
-                        <p>1</p>
-                        <p>2</p>
-                        <p>3</p>
-                        <p>4</p>
-                        <p>5</p>
-                        <p>6</p>
+                        <!-- <p>IN EVIDENZA</p>
+                        <p>PODCAST</p>
+                        <p>CLASSIFICHE</p>
+                        <p>GENERI E MOOD</p>
+                        <p>NUOVE USCITE</p>
+                        <p>SCOPRI</p> -->
+                        <ul>
+                            <li><a href="#">IN EVIDENZA</a></li>
+                            <li><a href="#">PODCAST</a></li>
+                            <li><a href="#">CLASSIFICHE</a></li>
+                            <li><a href="#">GENERI E MOOD</a></li>
+                            <li><a href="#">NUOVE USCITE</a></li>
+                            <li><a href="#">SCOPRI</a></li>
+                        </ul>
                     </nav>
                     <section id="recently">
-                        <h2>Recently played</h2>
+                        <h1>Recently played</h1>
                         <div class="my-row">
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/metal_lifting.jpg" alt="Heavy Metal">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>Heavy Metal</h2>
+                                    <p>Subtitle</p>
                                 </div>
                             </div>
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/stranger.jpeg" alt="Stranger Things">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>Stranger Things, Vol. 1 (a Netflix Original Series Soundtrack)</h2>
+                                    <p>Kyle Dixon & Michael Stein</p>
                                 </div>
                             </div>
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/aquietplace.jpeg" alt="A quiet place">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>A quiet place</h2>
+                                    <p>Subtitle</p>
                                 </div>
                             </div>
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/split.jpeg" alt="Split">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>Split</h2>
+                                    <p>Subtitle</p>
                                 </div>
                             </div>
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/cure.jpeg" alt="A cure for wellness">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>A cure for wellness</h2>
+                                    <p>Subtitle</p>
                                 </div>
                             </div>
                             <div class="songs">
                                 <div class="songs-img">
-                                    immagine
+                                    <img src="img/sinister.jpeg" alt="Sinister">
                                 </div>
 
                                 <div class="songs-description">
-                                    <h2>Titolo</h2>
-                                <p>Sottotitolo</p>
+                                    <h2>Sinister</h2>
+                                    <p>Subtitle</p>
                                 </div>
                             </div>
                         </div>
                     </section>
                     
                     <section id="generated">
-                            <h2>Creato per Maicol Nick</h2>
+                            <h1>Creato per Maicol Nick</h1>
                             <p>Più ascolti, più accurati saranno i suggerimenti!</p>
                             <div class="my-row">
-                                <div class="for-you"></div>
-                                <div class="for-you"></div>
+                                <div class="for-you">
+                                    <div class="for-you-img">
+                                        <img src="img/radar.jpeg" alt="Release Radar">
+                                        <h2>Release Radar</h2>
+                                    </div>
+                                </div>
+                                <div class="for-you">
+                                    <div class="for-you-img">
+                                        <img src="img/mixdaily.jpeg" alt="Daily Mix">
+                                        <h2>Daily Mix 1</h2>
+                                    </div>
+                                </div>
                             </div>
                     </section>
 
                     <section id="popular">
-                        <h2>Artisti più popolari</h2>
+                        <h1>Artisti più popolari</h1>
                         <p>Più ascolti, più accurati saranno i suggerimenti!</p>
                         <div class="my-row">
-                            <div class="for-you"></div>
-                            <div class="for-you"></div>
+                            <div class="for-you">
+                                <div class="for-you-img">
+                                    <img src="img/einaudi.jpeg" alt="Einaudi">
+                                    <h2>Einaudi</h2>
+                                </div>
+                            </div>
+                            <div class="for-you">
+                                <div class="for-you-img">
+                                    <img src="img/youg.jpeg" alt="Youg">
+                                    <h2>Lana Del Rey</h2>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -169,9 +237,25 @@
         <!-- Inizio Footer Principale -->
         <footer>
             <div class="footer-container">
-                <div class="footer-left"></div>
-                <div class="footer-center"></div>
-                <div class="footer-right"></div>
+                <div class="footer-left">
+                    <div class="footer-img">
+                        immagine 
+                    </div>
+                    <div class="footer-left-icons">
+                        titolo + icone
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <div class="footer-play">
+                        icone
+                    </div>
+                    <div class="footer-play-bar">
+                        barra scorrimento
+                    </div>
+                </div>
+                <div class="footer-right">
+                    icone + volume
+                </div>
             </div>
         </footer>
         <!-- Fine Footer Principale -->
