@@ -7,6 +7,17 @@
     box-sizing: border-box;
 }
 
+ul ol{
+    list-style: none;
+}
+
+:root{
+    --light-dark: #080B12;
+    --black:#000000;
+    --main-color:#141922;
+    --footer-color:#282828;
+    --header-width: 50px;
+}
 /* 
     GENERAL
 */
@@ -14,7 +25,160 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.header-container{
+    background-color: var(--light-dark);
+    color: white;
+    height: var(--header-width);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    text-align: right;
+    z-index: 1;
+}
+
+
+.footer-container{
+    background-color: var(--footer-color);
+    height: 80px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}
+
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    display: flex;
+}
+
+/* ASIDE BAR */
+
+aside{
+    background-color: var(--black);
+    width: 200px;
+    height: calc(100vh - 80px);
+    color: grey;
+    z-index: 2;
+    position: sticky;
+    left: 0;
+
+}
+
+.big-aside-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.small-aside-bar{
+    display: none;
+}
+
+.logo-container{
+    height: var(--header-width);
+}
+
+/* MAIN */
+
+.main-container{
+    width: calc(100% - 200px);
+    background-color: var(--main-color);
+    margin-top: 50px;
+    overflow: auto;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: center;
+    color: lightgray;
+}
+
+nav > *{
+    padding: 10px;
+}
+
+.my-row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.songs, .for-you{
+    width: calc((100% / 6) - 10px);
+    min-height: 150px;
+    margin: 0 5px;
+    border: 2px dashed white; /* debug border */
+}
+
+/* FOOTER */
+
+.footer-container{
+    display: flex;
+}
+
+.footer-left, .footer-right{
+    width: 20%;
+}
+
+.footer-center{
+    width: 60%;
+}
+
+/* degub */
+
+aside > *,
+.footer-container > *,
+.big-aside-top > *{
+    border: 2px dashed white;
+}
+
+
+
+
+
+
+
+/* MEDIA QUERY */
+
+/* -------------
+    PRIMO BREAKPOINT MEDIUM
+------------- */
+@media screen and (max-width: 1100px){
+    .songs, .for-you{
+        width: calc((100% / 4) - 10px);
+    }
+}
+
+/* -------------
+    SECONDO BREAKPOINT SMALL
+------------- */
+@media screen and (max-width: 700px){
+    .songs, .for-you{
+        width: calc((100% / 2) - 10px);
+    }
+}
+
+/* -------------
+    TERZO BREAKPOINT EXTRA SMALL
+------------- */
+@media screen and (max-width: 600px){
+    aside{
+        width: 50px;
+    }
+
+    .big-aside-bar{
+        display:none;
+    }
+
+    .main-container{
+        width: calc(100% - 50px);
+    }
+
+    .small-aside-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }
