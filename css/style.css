@@ -109,14 +109,12 @@ aside{
     position: fixed;
     left: 0;
     padding: 0 15px;
-
-}
-
-.big-aside-bar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
+
 
 .small-aside-bar{
     display: none;
@@ -191,6 +189,15 @@ aside{
     padding: 5px 0;
 }
 
+/* .big-aside-top{
+    height: 80%;
+} */
+
+.aside-playlist{
+    max-height: 250px;
+    overflow: auto;
+}
+
 /* ------------------------------------------------ */
 .aside-nav-bar .aside-menu:first-child p{
     color: white;
@@ -223,10 +230,9 @@ aside{
     width: calc(100% - 200px);
     margin-left: 200px;
     background-color: var(--main-color);
-    margin-top: 50px;
     margin-bottom: 80px;
     overflow: auto;
-    padding:0 15px;
+    padding: 50px 15px 0;
 }
 
 .nav-bar{
@@ -404,7 +410,7 @@ nav > *{
 }
 
 .footer-play i{
-    padding:5px 15px;
+    padding:5px 10px;
 }
 
 .footer-play a{
@@ -427,7 +433,7 @@ nav > *{
     width: 60%;
     display: flex;
     align-items: center;
-    position: relative;
+    
      
 }
 
@@ -440,6 +446,7 @@ nav > *{
 .time2{
     width: 25%;
     border: 1px solid white;
+    position: relative;
     
 }
 
@@ -460,6 +467,7 @@ nav > *{
 .volume2{
     width: 25%;
     border: 1px solid white;
+    position: relative;
 }
 
 .green-ball{
@@ -468,7 +476,8 @@ nav > *{
     border-radius: 50%;
     background-color: #ADFF2F;
     position: absolute;
-    left: 80px;
+    right: -5px;
+    top:-5px;
     display: none;
 
 }
@@ -517,6 +526,10 @@ EFFETTI ON HOVER
     display: block;
 }
 
+.volume1:hover .green-ball{
+    display: block;
+}
+
 .songs:hover .start{
     display: block;
 }
@@ -541,11 +554,6 @@ EFFETTI ON HOVER
 @media screen and (max-width: 700px){
     .songs, .for-you{
         width: calc((100% / 2) - 10px);
-    }
-
-    .footer-play i:first-child,
-    .footer-play i:last-child{
-        display: none;
     }
 }
 
@@ -592,9 +600,9 @@ EFFETTI ON HOVER
 /* MEDIA QUERY BONUS */
 
 @media screen and (max-width:420px) {
-    .footer-play > *:not(.button-play){
+    /* .footer-play > *:not(.button-play){
         display: none;
-    }
+    } */
 
     .footer-left > *:not(.footer-img){
         display:none;
@@ -623,5 +631,10 @@ EFFETTI ON HOVER
     nav > *{
         padding:0;
     }
+
+    .footer-play a:first-child,
+    .footer-play a:last-child{
+        display: none;
     
+}
 }
