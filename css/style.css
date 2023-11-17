@@ -31,12 +31,13 @@ body{
 }
 
 .header-container{
-    background-color: var(--light-dark);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     height: var(--header-width);
-    width: 100vw;
+    width: calc(100% - 200px);
     position: fixed;
     top: 0;
+    right: 0;
     text-align: right;
     z-index: 1;
     display: flex;
@@ -57,7 +58,7 @@ body{
 }
 
 .container {
-    width: 100%;
+    height: 100vh;
     display: flex;
 }
 
@@ -72,12 +73,16 @@ body{
     font-size: .8em;
 }
 
+.small-upgrade-button{
+    display:none;
+}
+
 ul li .add{
     display: inline-block;
     width: 30px;
     height: 30px;
     font-size: 30px;
-    line-height: 15px;
+    line-height: 20px;
     background-color: gray;
     color: black;
     text-decoration: none;
@@ -89,6 +94,8 @@ ul li .add{
 .aside-playlist ul li:first-child{
     display:flex;
 }
+
+
 
 /* ASIDE BAR */
 
@@ -108,13 +115,8 @@ aside{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* position: relative; */
 }
 
-/* .big-aside-bottom{
-    position: absolute;
-    bottom: 0;
-} */
 .small-aside-bar{
     display: none;
 }
@@ -129,13 +131,47 @@ aside{
     width: 60%;
 }
 
-/* .add-playlist{
+.aside-menu{
     display: flex;
     align-items: center;
-} */
+    position: relative;
+}
+.aside-nav-img{
+    width: 20px;
+    height: 20px;
 
-.big-aside-bar i{
-    margin-right: 5px;
+}
+
+.aside-nav-img img{
+    width: 100%;
+}
+
+.aside-menu p{
+    margin-left: 10px;
+    
+}
+
+.border-left{
+    height: 100%;
+    width: 5px;
+    background-color: #ADFF2F;
+    position: absolute;
+    left: -16px;
+    top: 0;
+    z-index: 4;
+    border-radius: 3px;
+}
+
+.aside-nav-img.circle{
+    border-radius: 50%;
+    background-color: #808080;
+    overflow: hidden;
+}
+
+.aside-nav-img.small{
+    width: 15px;
+    height: 15px;
+    padding-bottom: 15px;
 }
 
 .big-aside-bar p{
@@ -152,12 +188,20 @@ aside{
 .aside-playlist > h5,
 .aside-playlist a,
 .aside-playlist li,
-.big-aside-bottom > *:not(.add){
-    padding: 8px 0;
+.aside-menu{
+    padding: 5px 0;
 }
 
-.big-aside-bottom p{
+.aside-nav-bar .aside-menu:first-child p{
+    color: white;
+}
+
+.big-aside-bottom .aside-menu:first-child {
     border-bottom: 1px solid #7D7F84;
+}
+
+.big-aside-bottom .aside-menu:last-child p{
+    color: white;
 }
 
 .aside-playlist a{
@@ -166,9 +210,11 @@ aside{
     font-size: .8em;
     font-weight: bold;
 }
- .aside-playlist li{
+
+.aside-playlist li{
     list-style: none;
  }
+
 
 /* MAIN */
 
@@ -181,17 +227,6 @@ aside{
     overflow: auto;
     padding:0 15px;
 }
-
-/* .nav-bar{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: lightgray;
-    font-size: 0.7em;
-    font-weight: bold;
-    color: #7D7F84;
-    padding: 5px;
-} */
 
 .nav-bar{
     text-align: center;
@@ -206,7 +241,19 @@ aside{
     color: #7D7F84;
     padding: 10px;
     text-decoration: none;
+}
 
+.border-bottom{
+    width: 40%;
+    height: 2px;
+    background-color: #ADFF2F;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+
+}
+.nav-bar > ul > li:first-child{
+   position: relative;
 }
 
 nav > *{
@@ -238,8 +285,6 @@ nav > *{
     
 }
 
-
-
 .songs-description p{
     color: #7D7F84;
     font-weight: bold;
@@ -267,6 +312,10 @@ nav > *{
     font-weight: bold;
 }
 
+.radius{
+    border-radius: 50%;
+}
+
 #generated > p,
 #popular > p{
     color: #7D7F84;
@@ -279,33 +328,108 @@ nav > *{
 
 .footer-container{
     display: flex;
-}
-
-.footer-left, .footer-right{
-    width: 20%;
-}
-
-.footer-center{
-    width: 60%;
+    justify-content: space-between;
+    padding: 10px 10px;
 }
 
 .footer-left{
     display:flex;
     align-items: center;
+    width: 25%;
+}
+
+.footer-left-song{
+    padding: 0 10px;
+}
+
+.footer-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25%;
+}
+
+.footer-center{
+    width: 50%;
+}
+
+
+.footer-left-icons > i{
+    padding: 0 5px;
+    color: grey;
+}
+
+.footer-left-song > h5{
+    font-size: 0.8em;
+}
+
+.footer-left-song > p{
+    font-size: 0.7em;
 }
 
 .footer-center{
     text-align: center;
 }
 
+.footer-img{
+    width: 50px;
+    height: 50px;
+}
 
+.footer-img img{
+    width: 100%;
+}
 
+.footer-play i{
+    padding:5px 15px;
+}
 
+.footer-play-bar{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
 
+.footer-play-bar small{
+    padding: 0 10px;
+}
 
+.progress{
+    width: 60%;
+    display: flex;
+    align-items: center;
+     
+}
 
+.time1{
+    border: 1px solid grey;
+    width: 100%;
+}
 
+.time2{
+    width: 25%;
+    border: 1px solid white;
+}
 
+.footer-right-icons{
+    width: 50%;
+    text-align: right;
+}
+
+.footer-right-icons > *{
+    padding: 0 5px;
+}
+
+.volume1{
+    border: 1px solid grey;
+    width: 50%;
+}
+
+.volume2{
+    width: 25%;
+    border: 1px solid white;
+}
 
 
 /* MEDIA QUERY */
@@ -313,6 +437,7 @@ nav > *{
 /* -------------
     PRIMO BREAKPOINT MEDIUM
 ------------- */
+
 @media screen and (max-width: 1100px){
     .songs, .for-you{
         width: calc((100% / 4) - 10px);
@@ -322,15 +447,22 @@ nav > *{
 /* -------------
     SECONDO BREAKPOINT SMALL
 ------------- */
+
 @media screen and (max-width: 700px){
     .songs, .for-you{
         width: calc((100% / 2) - 10px);
+    }
+
+    .footer-play i:first-child,
+    .footer-play i:last-child{
+        display: none;
     }
 }
 
 /* -------------
     TERZO BREAKPOINT EXTRA SMALL
 ------------- */
+
 @media screen and (max-width: 600px){
     aside{
         width: 50px;
@@ -365,7 +497,41 @@ nav > *{
     .small-aside-bottom > *{
         padding: 10px 0;
     }
+}
 
+/* MEDIA QUERY BONUS */
+
+@media screen and (max-width:420px) {
+    .footer-play > *:not(.button-play){
+        display: none;
+    }
+
+    .footer-left > *:not(.footer-img){
+        display:none;
+    }
+
+    .footer-right-icons{
+        display: none;
+    }
+
+    .footer-img{
+        width: 75%;
+    }
+
+    .songs, .for-you{
+        width: calc(100% - 10px);
+    }
+
+    .upgrade-button{
+        display: none;
+    }
+
+    .small-upgrade-button{
+        display:block;
+    }
+
+    nav > *{
+        padding:0;
+    }
     
-
 }
