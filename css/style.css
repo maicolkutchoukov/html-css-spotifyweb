@@ -104,6 +104,7 @@ aside{
     background-color: var(--black);
     width: 200px;
     height: calc(100vh - 80px);
+    min-height: 350px;
     color: grey;
     z-index: 2;
     position: fixed;
@@ -115,6 +116,13 @@ aside{
 
 }
 
+
+.big-aside-top{
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+
+}
 
 .small-aside-bar{
     display: none;
@@ -189,13 +197,18 @@ aside{
     padding: 5px 0;
 }
 
-/* .big-aside-top{
-    height: 80%;
-} */
 
 .aside-playlist{
-    max-height: 250px;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* max-height: 260px; */
+    overflow: hidden;
+}
+
+.aside-playlist ul{
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 /* ------------------------------------------------ */
@@ -223,6 +236,10 @@ aside{
     list-style: none;
  }
 
+
+ .aside-menu p{
+    margin-left: 5px;
+ }
 
 /* MAIN */
 
@@ -534,6 +551,22 @@ EFFETTI ON HOVER
     display: block;
 }
 
+.footer-left-icons > .fa-heart:active{
+    color: red;
+}
+
+.small-aside-bar i:hover{
+    color: white;
+}
+
+.nav-bar li a:hover .border-bottom{
+    boder:1
+}
+
+
+
+
+
 
 /* MEDIA QUERY */
 
@@ -637,4 +670,8 @@ EFFETTI ON HOVER
         display: none;
     
 }
+    .header-container{
+        width: calc(100% - 50px);
+    }
+
 }
