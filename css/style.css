@@ -113,6 +113,7 @@ aside{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 
 }
 
@@ -120,7 +121,8 @@ aside{
 .big-aside-top{
     display: flex;
     flex-direction: column;
-    /* flex-grow: 1; */
+    flex-grow: 1;
+    overflow: hidden;
 
 }
 
